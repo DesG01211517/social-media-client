@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import { Providers } from "@/providers";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -25,7 +26,11 @@ export default function RootLayout({ children }) {
       >
         <header className="my-10 text-center">Social Media</header>
 
-        <main>{children}</main>
+        <main>
+          <Providers>
+          {children}
+          </Providers>
+          </main>
 
         <footer className="my-10 text-center">&copy; CodeX Academy</footer> 
       </body>
