@@ -2,6 +2,8 @@
 import Image from "next/image";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
+import { Swiper, SwiperSlide } from "swiper/react";
+import 'swiper/swiper-bundle.css';
 
 export default function Home() {
   const fetchPost = async () => {
@@ -20,13 +22,22 @@ export default function Home() {
 
 
   return (
-  <div>
+    <div>
     <h2>Posts</h2>
-    <ul>
-      {data?.map((post, index) =>(
-        <li key={post.id}>{post.content}</li>
+    <Swiper spaceBetween={50} slidesPerView={1}>
+      {data?.map((post) => (
+        <SwiperSlide key={post.id}>
+          <div className="post-container">
+            <h3>{post.title}</h3>
+            <p>{post.content}</p>
+            <div className="likes-comments">
+              <span>Likes: {post.likes}</span>
+              <span>Comments: {post.comments}</span>
+            </div>
+          </div>
+        </SwiperSlide>
       ))}
-    </ul>
+    </Swiper>
   </div>
   );
 };
