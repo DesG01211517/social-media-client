@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
+import { PostCard } from "../components/PostCard";
 
 export default function Home() {
   const fetchPost = async () => {
@@ -19,9 +20,23 @@ export default function Home() {
   if (isError)
     return <div> Error.... please contact administration {error.message}</div>;
 
+  //   return (
+  //     <div>
+  //       <h2>Posts</h2>
+  //       <Swiper spaceBetween={50} slidesPerView={1}>
+  //         {data?.map((post) => (
+  //           <SwiperSlide key={post.id}>
+  //             <PostCard post={post.id} />
+  //           </SwiperSlide>
+  //         ))}
+  //       </Swiper>
+  //     </div>
+  //   );
+  // }
+
   return (
-    <div>
-      <h2>Posts</h2>
+    <div className="swiper-container">
+      <h2 className="text-center font-thin">Posts</h2>
       <Swiper spaceBetween={50} slidesPerView={1}>
         {data?.map((post) => (
           <SwiperSlide key={post.id}>
@@ -29,12 +44,11 @@ export default function Home() {
               <h3>{post.title}</h3>
               <p>{post.content}</p>
 
-              {/* Render media (video or image) based on media_url */}
               {post.media_url ? (
                 post.media_url.match(
                   /\.(mp4|webm|ogg|mov|avi|mkv|flv|wmv|mpg|mpeg)$/i
                 ) ? (
-                  <video controls width="100%">
+                  <video controls width="80%">
                     <source src={post.media_url} />
                     Your browser does not support the video tag.
                   </video>
@@ -46,13 +60,12 @@ export default function Home() {
               )}
 
               <div className="likes-comments">
-                <span>Likes: {post.likes}</span>
+                <span>Likes: {post.likes.length}</span>
                 <h4>Comments:</h4>
                 {Array.isArray(post.comments) && post.comments.length > 0 ? (
                   post.comments.map((comment) => (
                     <div key={comment.id} className="comment">
                       <p>{comment.content}</p>
-                      <span>Likes: {comment.likes}</span>{" "}
                       {/* Assuming each comment has likes */}
                     </div>
                   ))

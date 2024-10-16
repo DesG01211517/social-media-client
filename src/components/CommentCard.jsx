@@ -5,7 +5,7 @@ const CommentCard = ({ comment }) => {
   return (
     <div className="comment-card">
       <p>{comment.content}</p>
-      <LikesCard likes={comment.likes} /> {/* Display likes for the comment */}
+      <LikesCard likes={comment.likes} />
     </div>
   );
 };

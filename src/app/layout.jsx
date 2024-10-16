@@ -27,13 +27,11 @@ export default function RootLayout({ children }) {
         <header className="my-10 text-center">Social Media</header>
 
         <main>
-          <Providers>
-          {children}
-          </Providers>
-          </main>
+          <Providers>{children}</Providers>
+        </main>
 
-        <footer className="my-10 text-center">&copy; CodeX Academy</footer> 
+        <footer className="my-10 text-center">&copy; CodeX Academy</footer>
       </body>
     </html>
   );
-};
+}
