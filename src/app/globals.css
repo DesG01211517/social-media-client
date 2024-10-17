@@ -26,10 +26,10 @@
   }
   
 } */
-.swiper-container {
-  width: 80%; /* Adjust the width of the slides */
-  max-width: 800px; /* Set a maximum width for large screens */
-  margin: 0 auto; /* Center the Swiper container */
+/* .swiper-container {
+  width: 80%; 
+  max-width: 800px;
+  margin: 0 auto; 
 }
 
 .post-container {
@@ -45,4 +45,4 @@
   justify-content: space-between;
   font-size: 14px;
   color: #555;
-} 
+}  */

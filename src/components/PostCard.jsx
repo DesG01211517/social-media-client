@@ -4,9 +4,9 @@ import { LikesCard } from "./LikesCard";
 
 const Post = ({ post }) => {
   return (
-    <div className="post-container">
-      <h3>{post.title}</h3>
-      <p>{post.content}</p>
+    <div className="post-container bg-gray-100 border border-gray-300 shadow-lg rounded-lg mx-auto p-6 w-1/2 text-center">
+      <h3 className="text-lg font-bold">{post.title}</h3>
+      <p className="text-3xl font-semibold mb-4">{post.content}</p>
 
       {post.media_url ? (
         post.media_url.match(
@@ -17,21 +17,25 @@ const Post = ({ post }) => {
             Your browser does not support the video tag.
           </video>
         ) : (
-          <img src={post.media_url} alt={post.title} />
+          <img
+            src={post.media_url}
+            alt={post.title}
+            className="w-full h-auto mx-auto"
+          />
         )
       ) : (
-        <p>No media available</p>
+        <p className="text-gray-900 font-bold">No media available</p>
       )}
 
-      <div className="likes-comments">
+      <div className="likes-comments mt-4">
         <LikesCard likes={post.likes} />
-        <h4>Comments:</h4>
+        <h4 className="text-black font-bold">Comments:</h4>
         {Array.isArray(post.comments) && post.comments.length > 0 ? (
           post.comments.map((comment) => (
             <CommentCard key={comment.id} comment={comment} />
           ))
         ) : (
-          <p>No comments available</p>
+          <p className="font-bold text-gray-700">No comments available</p>
         )}
       </div>
     </div>
@@ -39,17 +43,3 @@ const Post = ({ post }) => {
 };
 
 export default Post;
-
-//new home page component for postCard component
-// return (
-//   <div>
-//     <h2>Posts</h2>
-//     <Swiper spaceBetween={50} slidesPerView={1}>
-//       {data?.map((post) => (
-//         <SwiperSlide key={post.id}>
-//           <Post post={post} /> {/* Render Post component */}
-//         </SwiperSlide>
-//       ))}
-//     </Swiper>
-//   </div>
-// );

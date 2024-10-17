@@ -19,18 +19,39 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  // return (
+  //   <html lang="en">
+  //     <body
+  //       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+  //     >
+  //       <header className="my-10 text-center">Flash</header>
+
+  //       <main>
+  //         <Providers>{children}</Providers>
+  //       </main>
+
+  //       <footer className="my-10 text-center">&copy; CodeX Academy</footer>
+  //     </body>
+  //   </html>
+  // );
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-900 text-gray-200 min-h-screen flex flex-col justify-between`}
       >
-        <header className="my-10 text-center">Social Media</header>
+        <header className="my-10 text-center">
+          <h1 className="text-6xl font-bold text-yellow-400 animate-pulse">
+            Flash
+          </h1>
+        </header>
 
-        <main>
+        <main className="flex-grow">
           <Providers>{children}</Providers>
         </main>
 
-        <footer className="my-10 text-center">&copy; CodeX Academy</footer>
+        <footer className="text-center py-4 bg-gray-800 text-gray-400 w-full">
+          &copy; CodeX Academy
+        </footer>
       </body>
     </html>
   );
