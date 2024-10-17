@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-900 text-gray-200 min-h-screen flex flex-col justify-between`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-900 text-gray-900 font-bold min-h-screen flex flex-col justify-between`}
       >
         <header className="my-10 text-center">
           <h1 className="text-6xl font-bold text-yellow-400 animate-pulse">
