@@ -1,6 +1,6 @@
 import React from "react";
-import { CommentCard } from "./CommentCard";
-import { LikesCard } from "./LikesCard";
+import { CommentCard } from "../components/CommentCard";
+import { LikesCard } from "../components/LikesCard";
 
 const Post = ({ post }) => {
   return (

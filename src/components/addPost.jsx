@@ -42,7 +42,7 @@ function AddPost() {
       onClick={activateForm}
       onSubmit={handleSubmit}
     >
-      <h3 className="text-lg font-bold mb-4">Add a Post</h3>
+      <h3 className="text center text-lg font-bold mb-4">Add a Post</h3>
 
       <label className="block text-left font-semibold mb-2" htmlFor="media">
         Media URL (Image or Video):

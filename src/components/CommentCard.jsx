@@ -1,5 +1,5 @@
 import React from "react";
-import { LikesCard } from "./LikesCard";
+import { LikesCard } from "../components/LikesCard";
 
 const CommentCard = ({ comment }) => {
   return (
